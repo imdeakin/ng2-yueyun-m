@@ -1,0 +1,17 @@
+.con {
+  text-align: center;
+  font-size: 0;
+}
+
+.title {
+  font-size: .48rem;
+  margin-top: .56rem;
+  margin-bottom: .36rem
+}
+
+.line {
+  display: inline-block;
+  width: .68rem;
+  height: .03rem;
+  background-color: #00CCFF;
+}

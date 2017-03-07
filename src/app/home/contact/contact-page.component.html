@@ -1,0 +1,58 @@
+<div class="con">
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <input type="text" name="name" value="" placeholder="姓名" minlength="2" maxlength="16" required
+             [(ngModel)]="user.name" #name="ngModel">
+      <div class="error-msg" *ngIf="name.errors && (name.dirty || name.touched)">
+        <div [hidden]="!name.errors.required">
+          此项必须填写！
+        </div>
+        <div [hidden]="!name.errors.minlength">
+          内容长度必须是2-16！
+        </div>
+        <div [hidden]="!name.errors.maxlength">
+          内容长度必须是2-16！
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="tel" name="phone" value="" placeholder="电话" datatype="contact" required
+             [(ngModel)]="user.phone" #phone="ngModel">
+      <div class="error-msg" *ngIf="phone.errors && (phone.dirty || phone.touched)">
+        <div [hidden]="!phone.errors.required">
+          此项必须填写！
+        </div>
+        <div [hidden]="!phone.errors.type">
+          请输入正确的联系号码！
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" value="" placeholder="邮箱" required
+             [(ngModel)]="user.email" #email="ngModel">
+      <div class="error-msg" *ngIf="email.errors && (email.dirty || email.touched)">
+        <div [hidden]="!email.errors.required">
+          此项必须填写！
+        </div>
+        <div [hidden]="!email.errors.type">
+          请输入正确的邮箱！
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea name="word" placeholder="请写下您的意见或留言" maxlength="500" required
+                [(ngModel)]="user.word" #word="ngModel"></textarea>
+      <div class="error-msg" *ngIf="word.errors && (word.dirty || word.touched)">
+        <div [hidden]="!word.errors.required">
+          此项必须填写！
+        </div>
+        <div [hidden]="!word.errors.maxlength">
+          内容长度必须是500字以内
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" [disabled]="!contactForm.form.valid">联系我们</button>
+    </div>
+  </form>
+</div>

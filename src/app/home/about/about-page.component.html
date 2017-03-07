@@ -1,0 +1,9 @@
+<div class="con">
+  <p class="content">{{content}}</p>
+  <ul class="list">
+    <li class="item" *ngFor="let item of aboutItems;let i = index;" [class.centerItem]="countServer.isCenterItem(i)">
+      <h2 class="title">{{item.title}}</h2>
+      <img class="icon" src="{{item.icon}}">
+    </li>
+  </ul>
+</div>

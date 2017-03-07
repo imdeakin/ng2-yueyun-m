@@ -1,0 +1,15 @@
+<div id="partner-page" class="con">
+  <div class="tabs">
+    <span class="tab first-tab" (click)="toggleSlide(0)"
+          [class.active]="curSlideIndex === 0">上市企业</span>
+    <span class="tab" (click)="toggleSlide(1)"
+          [class.active]="curSlideIndex === 1">非上市企业</span>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of partners;">
+        <part-list-item [partners]="item"></part-list-item>
+      </div>
+    </div>
+  </div>
+</div>

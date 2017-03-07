@@ -1,0 +1,28 @@
+.con {
+  padding: 0.32rem 0;
+}
+
+.item {
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin: .32rem 0;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: .42rem;
+  font-weight: lighter;
+  line-height: 1rem;
+}
+
+.describe {
+  margin: 0;
+  font-size: .32rem;
+  font-weight: lighter;
+}

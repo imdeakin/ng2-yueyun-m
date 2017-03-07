@@ -1,0 +1,27 @@
+.con {
+  padding: 0 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.list .item {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  margin-bottom: .14rem;
+}
+
+.list .item:nth-of-type(2n -1) {
+  padding-right: .07rem;
+}
+
+.list .item:nth-of-type(2n) {
+  padding-left: .07rem;
+
+}
+
+.list .item img {
+  width: 100%;
+  height: auto;
+}
+
+

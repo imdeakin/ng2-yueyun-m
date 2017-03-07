@@ -1,0 +1,32 @@
+.tabs {
+  text-align: center;
+  margin-top: .7rem;
+  margin-bottom: 1.4rem;
+  font-size: 0;
+}
+
+.tab {
+  display: inline-block;
+  width: 2.3rem;
+  height: .8rem;
+  font-size: .4rem;
+  line-height: .8rem;
+  border-radius: 2px;
+  border: 1px solid #9c9c9c;
+  cursor: pointer;
+}
+
+.first-tab {
+  margin-right: 1.2rem;
+}
+
+.tab.active {
+  background-color: #00aaee;
+  border: none;
+  color: white;
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+  padding: 0 .5rem;
+}

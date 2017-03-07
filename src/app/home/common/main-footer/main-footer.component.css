@@ -1,0 +1,55 @@
+.con {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: .5rem;
+  background-color: #333;
+}
+
+.info {
+  float: left;
+  width: 70%;
+  color: #eee;
+}
+
+.vcode {
+  float: right;
+  width: 30%;
+}
+
+.text-blue {
+  color: #63bcff;
+}
+
+.info .title {
+  margin: 0 0 .5rem;
+  font-size: .42rem;
+}
+
+.msg-group {
+  box-sizing: border-box;
+  line-height: .45rem;
+  font-size: .36rem;
+}
+
+.msg-group .name {
+  float: left;
+  width: 25%;
+}
+
+.msg-group .val {
+  float: left;
+  width: 70%;
+}
+
+.vcode > img {
+  width: 100%;
+  height: auto;
+}
+
+.vcode .tel {
+  text-align: center;
+  font-size: .34rem;
+  line-height: .8rem;
+}

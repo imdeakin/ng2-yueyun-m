@@ -1,0 +1,12 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background: url('/assets/img/bg.png') no-repeat center/contain;
+}
+
+.swiper-slide .con {
+  padding: 0 1rem;
+}
