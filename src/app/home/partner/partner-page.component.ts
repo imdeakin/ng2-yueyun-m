@@ -3,8 +3,7 @@
  */
 import {
     Component,
-    OnInit,
-    AfterViewInit
+    OnInit
 } from '@angular/core';
 
 import { Partner } from './partner';
@@ -31,22 +30,30 @@ export class PartnerPageComponent implements OnInit {
         this.getPartners();
     }
 
-    public ngAfterViewInit(): void {
-        this.initSwiper();
-    }
-
+    /**
+     * 切换Slide
+     * @param index
+     */
     public toggleSlide(index: number) {
         this.swiper.slideTo(index + 1);
     }
 
+    /**
+     * 获取partners数据
+     */
     private getPartners(): void {
         let $this = this;
         this.partnerServer.getPartners((partners: Partner[]) => {
             $this.partners = $this.groupPartners(partners);
-            this.checkSlideChange($this.partners.length);
+            $this.onSlideReady($this.partners.length);
         });
     }
 
+    /**
+     * 将partners按type来分组
+     * @param partners
+     * @returns {Array}
+     */
     private groupPartners(partners: Partner[]) {
         let json = {};
         for (let i = 0, len = partners.length; i < len; i++) {
@@ -65,6 +72,9 @@ export class PartnerPageComponent implements OnInit {
         return arr;
     }
 
+    /**
+     * 初始化Swiper
+     */
     private initSwiper() {
         let $this = this;
         this.swiper = new Swiper('#partner-page .swiper-container', {
@@ -74,23 +84,16 @@ export class PartnerPageComponent implements OnInit {
     }
 
     /**
-     * 监测slide数量变化，一旦变化，则重新初始化swiper
-     * @param maxLen slide的最大数量，如果 maxLen <= 0 或 当超过这个数时，则停止监测
+     * 当所有slide都加入dom完成后初始化Swiper
+     * @param slideNum slide的数量 当数量是此值时，就初始化Swiper
      */
-    private checkSlideChange(maxLen: number) {
+    private onSlideReady(slideNum: number) {
         let $this = this;
-        let curlen = document.querySelectorAll('#partner-page .swiper-slide').length;
         let id = setInterval(() => {
             let slides = document.querySelectorAll('#partner-page .swiper-slide');
-            if (curlen !== slides.length) {
-                curlen = slides.length;
-                if (maxLen > 0 && maxLen <= curlen) {
-                    clearInterval(id);
-                }
-                if ($this.swiper) {
-                    $this.swiper.destroy();
-                    $this.initSwiper();
-                }
+            if (slides.length === slideNum) {
+                clearInterval(id);
+                $this.initSwiper();
             }
         }, 500);
     }

@@ -12,19 +12,19 @@ import { Partner } from './partner';
 @Injectable()
 export class PartnerServer {
 
-  constructor(private apiServer: ApiServer) {
-  };
-
-  public getPartners(success: any, failure?: any) {
-    let options: ReqOpts = {
-      url: ApiConfig.apiPath.getPartnerList,
-      success: (data: Partner[]) => {
-        success(data);
-      },
-      failure: () => {
-        console.error('Get partner list error!');
-      }
+    constructor(private apiServer: ApiServer) {
     };
-    this.apiServer.get(options);
-  }
+
+    public getPartners(success: any, failure?: any) {
+        let options: ReqOpts = {
+            url: ApiConfig.apiPath.getPartnerList,
+            success: (data: Partner[]) => {
+                success(data);
+            },
+            failure: () => {
+                console.error('Get partner list error!');
+            }
+        };
+        this.apiServer.get(options);
+    }
 }
