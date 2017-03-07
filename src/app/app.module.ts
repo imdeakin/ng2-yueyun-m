@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { HomeModule } from './home';
 
 import { ApiServer } from './serv/api-server';
-import { ApiConfig } from './serv/api-config';
 
 import { AppComponent }  from './app.component';
 
@@ -25,5 +24,4 @@ import { AppComponent }  from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-//test
 }
